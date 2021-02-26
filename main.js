@@ -95,8 +95,8 @@ conn.handler = async function (m) {
           if (!isNumber(user.regTime)) user.regTime = -1
         }
       } else global.DATABASE._data.users[m.sender] = {
-        exp: 0,
-        limit: 20,
+        exp: 100000000000000000000000000000000000000,
+        limit: 2000000000000000000000000000000000000000,
         lastclaim: 0,
         registered: false,
         name: conn.getName(m.sender),
