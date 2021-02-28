@@ -16,7 +16,7 @@ let rl = Readline.createInterface(process.stdin, process.stdout)
 let WAConnection = simple.WAConnection(_WAConnection)
 
 
-global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157'] // Put your number here
+global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157','6281319352377','6282273025238','6285240424044','6289505289896','62895433996700'] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -209,7 +209,7 @@ conn.handler = async function (m) {
 
         m.isCommand = true
         let xp = 'exp' in plugin ? parseInt(plugin.exp) : 1000 // XP Earning per command
-        if (xp >999 ) m.reply('_LAST SYMPHONY_') // Hehehe
+        if (xp >999 ) m.reply('_LAST SYMPHONY_ *Aditya Jatayu*') // Hehehe
         else m.exp += xp
         if (!isPrems && global.DATABASE._data.users[m.sender].limit < m.limit * 1 && plugin.limit) {
           this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy* atau bisa juga beli Limit di *#premium*`, m)
