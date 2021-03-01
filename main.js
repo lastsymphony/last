@@ -16,7 +16,7 @@ let rl = Readline.createInterface(process.stdin, process.stdout)
 let WAConnection = simple.WAConnection(_WAConnection)
 
 
-global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157','6281319352377','6282273025238','6285240424044','6289505289896','62895433996700'] // Put your number here
+global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157','6281319352377','6282273025238','6285240424044','6289505289896','62895433996700','62895618689182'] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -364,7 +364,7 @@ conn.on('close', () => {
 global.dfail = (type, m, conn) => {
   let msg = {
     rowner: 'Perintah ini hanya dapat digunakan oleh _*OWNER NfQ!*_',
-    owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
+    owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot dan admin group AOI*_!',
     mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
     premium: 'Perintah ini hanya untuk member _*Premium*_ !\nIngin beli? Segera ketik *#premium*\nDi Instagram: *@arpunchs*',
     group: 'Perintah ini hanya dapat digunakan di grup!',
