@@ -15,8 +15,8 @@ let { spawnSync } = require('child_process')
 let Readline = require('readline')
 let rl = Readline.createInterface(process.stdin, process.stdout)
 let WAConnection = simple.WAConnection(_WAConnection)
-let lolis = require('lolis.life')
-let loli = new lolis()
+//let lolis = require('lolis.life')
+//let loli = new lolis()
 
 
 global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157','6281319352377','6282273025238','6285240424044','6289505289896','62895433996700','62895618689182'] // Put your number here
