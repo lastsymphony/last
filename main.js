@@ -3,6 +3,7 @@ let { generate } = require('qrcode-terminal')
 let qrcode = require('qrcode')
 let simple = require('./lib/simple')
 //  let logs = require('./lib/logs')
+let _afk = JSON.parse(fs.readFileSync('./lib/afk.json'))
 let yargs = require('yargs/yargs')
 let syntaxerror = require('syntax-error')
 let fetch = require('node-fetch')
@@ -14,6 +15,8 @@ let { spawnSync } = require('child_process')
 let Readline = require('readline')
 let rl = Readline.createInterface(process.stdin, process.stdout)
 let WAConnection = simple.WAConnection(_WAConnection)
+let lolis = require('lolis.life')
+let loli = new lolis()
 
 
 global.owner = ['6289670394574','6285823554146','6285747874973','6285762005157','6281319352377','6282273025238','6285240424044','6289505289896','62895433996700','62895618689182'] // Put your number here
@@ -103,7 +106,45 @@ conn.handler = async function (m) {
         age: -1,
         regTime: -1,
       }
-      
+      let isAfkOn = afk.checkAfkUser(sender.id, _afk)
+      if (isGroupMsg) {
+            for (let ment of mentionedJidList) {
+                if (afk.checkAfkUser(ment, _afk)) {
+                    let getId = afk.getAfkId(ment, _afk)
+                    let getReason = afk.getAfkReason(getId, _afk)
+                    let getTime = afk.getAfkTime(getId, _afk)
+                    await bocchi.reply(from, ind.afkMentioned(getReason, getTime), id)
+                }
+            }
+            if (afk.checkAfkUser(sender.id, _afk) && !isCmd) {
+                _afk.splice(afk.getAfkPosition(sender.id, _afk), 1)
+                fs.writeFileSync('./database/user/afk.json', JSON.stringify(_afk))
+                await bocchi.sendText(from, ind.afkDone(pushname))
+            }
+        }
+      if (chats == 'p') {
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
+        
+        if (chats == 'P') {
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
+        
+        if (chats == 'bot') {
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
+        
+        if (chats == 'Bot') {
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
+        
+        if (chats == 'assalamualaikum') {
+            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
+        
+        if (chats == 'Assalamualaikum') {
+            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+        }
       let chat
       if (chat =  global.DATABASE._data.chats[m.chat]) {
         if (!'isBanned' in chat) chat.isBanned = false
@@ -239,7 +280,7 @@ conn.handler = async function (m) {
           console.log(e)
           if (e) m.reply(util.format(e))
         } finally {
-          if (m.limit) m.reply(+ m.limit + ' Limit terpakai, jangan spam')
+          if (m.limit) m.reply(+ m.limit + ' Limit terpakai, jangan spam ya *Onii-chan*')
         }
   			break
   		}
