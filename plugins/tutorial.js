@@ -1,27 +1,24 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
   conn.reply(m.chat, `
 Tutorial Buat Bot WA:
-Credit: *~Drawl Nag*
+Credit: *Last*
 
 Ketik di *[TERMUX]*
-1) $pkg install git
-2) $pkg install ffmpeg
-3) $pkg install imagemagick
-4) $pkg install nodejs
-
-Untuk Githubnya..
-5) $git clone https://github.com/Arya274/Arya-BOT4
-6) $ls
-7) $cd Arya-BOT4
-
-yang *terakhirr*..
-Penginstalannya cuy :)
-8) npm i
-9) node index.js
+1) $pkg install git -y
+2) $pkg install ffmpeg -y
+3) $pkg install imagemagick -y
+4) $pkg install nodejs -y
+5) $pkg install libwep -y
+6) $git clone https://github.com/lastsymphony/last
+7) $ls
+8) $cd last
+9) $npm install
+10) $npm audit fix
+11) $npm start
+scan kode qr
 
 _Bisa kalian liat tutorialnya di_
 *Youtube kami:*
-https://www.youtube.com/c/DrawlNag
 `.trim(), m)
 }
 handler.help = ['tutorial']
